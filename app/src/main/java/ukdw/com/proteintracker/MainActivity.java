@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
         TextView textView = (TextView) findViewById(R.id.mainActivityTextView);
         textView.setText(R.string.test_untuk_update_view);
+        Button mylay = findViewById(R.id.btn_layout);
+        mylay.setOnClickListener(btnLayout);
 
         Button myBtn = (Button) findViewById(R.id.button1);
         myBtn.setOnClickListener(new View.OnClickListener() {
@@ -30,8 +32,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button myBtn1 = (Button) findViewById(R.id.button1);
+        myBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText myEditText = (EditText) findViewById(R.id.editText1);
+                Log.d("Proteintracker", myEditText.getText().toString());
+            }
+        });
+
         Button helpBtn = (Button)findViewById(R.id.helpButton);
         helpBtn.setOnClickListener(helpButtonListener);
+
 
         if(savedInstanceState != null){
             Log.d("ProteinTracker",savedInstanceState.getString("abc")); }
@@ -48,6 +60,13 @@ public class MainActivity extends AppCompatActivity {
             b.putString("helpString",myEditText.getText().toString());
             intent.putExtras(b);
 
+            startActivity(intent);
+        }
+    };
+    private  View.OnClickListener btnLayout = new View.OnClickListener(){
+        @Override
+        public void onClick(View view){
+            Intent intent = new Intent(MainActivity.this,Main2Activity.class);
             startActivity(intent);
         }
     };
