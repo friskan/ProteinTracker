@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         Button helpBtn = (Button)findViewById(R.id.helpButton);
         helpBtn.setOnClickListener(helpButtonListener);
 
+        Button btnFragment = (Button)findViewById(R.id.btnFragment);
+
 
         if(savedInstanceState != null){
             Log.d("ProteinTracker",savedInstanceState.getString("abc")); }
@@ -63,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
     };
+
+
     private  View.OnClickListener btnLayout = new View.OnClickListener(){
         @Override
         public void onClick(View view){
